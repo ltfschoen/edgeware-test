@@ -17,7 +17,7 @@ The user should permanently delete history and any input or outputs files that m
 * Run the following to generate and store the wallet's associated private hex key in a file output.txt
   * Example hard-coded JSON v3: `yarn run json-example-v3-hardcoded.js`
   * Example load from JSON file v3: `yarn run json-example-v3-file.js`
-  * Real JSON file v3: `yarn run json-v3-file.js`
+  * Real JSON file v3: `yarn run json-v3-file.js` (copy a real encrypted JSON file into the project root and name it keystore.json)
 * Use the private key in Edgeware lockdrop for example https://blog.edgewa.re/edgeware-lockdrop-how-to-participate/. 
 
 # References:
