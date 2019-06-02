@@ -1,0 +1,34 @@
+/*
+ * Example using password encrypted JSON v3 - Hardcoded wallet file contents 
+ */
+require('dotenv').config();
+const fs = require('fs');
+const jswallet = require("ethereumjs-wallet");
+
+// Hard-coded JSON
+const json = {
+    version: 3,
+    id: 'f834ca09-6a3f-4bff-b2a3-fe471393e194',
+    address: '75a426f8136891afe4244347ce6931f5826e5cc7',
+    crypto: {
+        ciphertext: '1c0c43ec8c71756f83b97cdf141e269737fe26e936cde5ddb074abb0dc5c244d',
+        cipherparams: {iv: 'e77638e7b6baf35667aea62d4721a937'},
+        cipher: 'aes-128-ctr',
+        kdf: 'scrypt',
+        kdfparams:
+            {
+                dklen: 32,
+                salt: '2b994a37e5295f0ae2ac6f2ddfdd7e2919bcbe3e779a8b329aff5d312407ec14',
+                n: 262144,
+                r: 8,
+                p: 1
+            },
+        mac: '389c1b287d955b92c7306740f7381805bf3424aedbe16705e43097db96712ce4'
+    }
+};
+
+const wallet = jswallet.fromV3(json, "password");
+// Warning: Only use console.log in the example 
+console.log("Private key " + wallet.getPrivateKey().toString("hex"));
+const privateKey = wallet.getPrivateKey().toString("hex");
+fs.writeFileSync('/home/ltfschoen/output.txt', privateKey);
