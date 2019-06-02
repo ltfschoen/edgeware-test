@@ -6,8 +6,7 @@ const fs = require('fs');
 const jswallet = require("ethereumjs-wallet");
 
 // Load JSON from external file
-const data = fs.readFileSync('example-v3-keystore.json', 'utf8');
-const json = JSON.parse(data);
+const json = JSON.parse(fs.readFileSync('example-v3-keystore.json', 'utf8'));
 
 const wallet = jswallet.fromV3(json, "password");
 // Warning: Only use console.log in the example 

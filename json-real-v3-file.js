@@ -5,8 +5,7 @@ require('dotenv').config();
 const fs = require('fs');
 const jswallet = require("ethereumjs-wallet");
 
-const data = fs.readFileSync('keystore.json', 'utf8');
-const json = JSON.parse(data);
+const json = JSON.parse(fs.readFileSync('keystore.json', 'utf8'));
 
 // Replace with .EthSale to import from Ethereum Sale wallet file
 // See https://github.com/ethereumjs/ethereumjs-wallet#wallet-api
